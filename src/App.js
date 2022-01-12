@@ -1,9 +1,15 @@
 import React from 'react'
+import Header from './components/Header'
 
 function App() {
     return (
         <div>
-            <h2>Just an App</h2>
+            <Header></Header>
+
+            {/* main body */}
+            {/* left bar */}
+            {/* feed */}
+            {/* right widgets */}
         </div>
     )
 }
