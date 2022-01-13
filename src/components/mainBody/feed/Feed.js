@@ -15,7 +15,13 @@ function Feed() {
 
     useEffect(() => {
         db.collection('posts').onSnapshot((snapshot) => {
-            setPosts(snapshot.docs)
+            setPosts(snapshot.docs.map((doc) => {
+                return (
+                    {
+
+                    }
+                )
+            }))
         })
     }, [])
 
