@@ -18,7 +18,6 @@ function App() {
             {user ? (<div className="app-body">
                 <Sidebar></Sidebar>
                 <Feed></Feed>
-                {/* right widgets */}
             </div>) : <Login></Login>}
         </div>
     )
