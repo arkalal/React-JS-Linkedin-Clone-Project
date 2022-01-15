@@ -7,18 +7,21 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from './posts/Post';
-import { db } from '../../../firebase/Firebase';
+import { db } from '../../../fireBase/fireBase';
+import firebase from 'firebase';
 
 function Feed() {
 
     const [Posts, setPosts] = useState([])
+    const [Input, setInput] = useState('')
 
     useEffect(() => {
-        db.collection('posts').onSnapshot((snapshot) => {
+        db.collection("posts").orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
             setPosts(snapshot.docs.map((doc) => {
                 return (
                     {
-
+                        id: doc.id,
+                        data: doc.data()
                     }
                 )
             }))
@@ -27,6 +30,16 @@ function Feed() {
 
     const sendPost = (e) => {
         e.preventDefault()
+
+        db.collection('posts').add({
+            name: "Arka Lal Chakravarty",
+            description: "I am a test",
+            message: Input,
+            photoUrl: "",
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+
+        setInput('')
     }
 
 
@@ -36,7 +49,7 @@ function Feed() {
                 <div className="feed-input">
                     <CreateIcon></CreateIcon>
                     <form action="">
-                        <input type="text" />
+                        <input value={Input} onChange={(e) => { setInput(e.target.value) }} type="text" />
                         <button onClick={sendPost} type='submit'>Send</button>
                     </form>
                 </div>
@@ -49,7 +62,11 @@ function Feed() {
                 </div>
             </div>
 
-            <Post name='Arka Lal' desription='This is a test' message='This is really nice'></Post>
+            {Posts.map(({ id, data: { name, description, message, photoUrl } }) => {
+                return (
+                    <Post key={id} name={name} description={description} message={message} photoUrl={photoUrl}></Post>
+                )
+            })}
         </div>
     )
 }

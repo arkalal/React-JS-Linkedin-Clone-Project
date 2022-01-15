@@ -7,7 +7,7 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 
-function Post({ name, desription, message, photoUrl }) {
+function Post({ name, description, message, photoUrl }) {
     return (
         <div className='post'>
             <div className="post-header">
@@ -15,7 +15,7 @@ function Post({ name, desription, message, photoUrl }) {
 
                 <div className="post-info">
                     <h2> {name} </h2>
-                    <p> {desription} </p>
+                    <p> {description} </p>
                 </div>
             </div>
 
