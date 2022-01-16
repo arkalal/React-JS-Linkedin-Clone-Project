@@ -1,24 +1,25 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import Header from './components/Header'
-import Login from './components/login/Login'
 import Feed from './components/mainBody/feed/Feed'
 import Sidebar from './components/mainBody/sidebar/Sidebar'
 import './css/App.css'
-import { selectUser } from './reduxStore/UserSlice'
+import Login from './components/login/Login'
+import { useSelector } from 'react-redux'
 
 function App() {
 
-    const user = useSelector(selectUser)
+    const user = useSelector((state) => state.user.value)
 
     return (
         <div className='app'>
             <Header></Header>
 
-            {user ? (<div className="app-body">
-                <Sidebar></Sidebar>
-                <Feed></Feed>
-            </div>) : <Login></Login>}
+            {!user ? <Login></Login> : (
+                <div className="app-body">
+                    <Sidebar></Sidebar>
+                    <Feed></Feed>
+                </div>
+            )}
         </div>
     )
 }

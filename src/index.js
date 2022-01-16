@@ -6,7 +6,6 @@ import "./index.css"
 import store from './reduxStore/store'
 
 reactDom.render
-    (<Provider store={{ store }}>
+    (<Provider store={store}>
         <App></App>
-    </Provider>,
-        document.getElementById("root"))
+    </Provider>, document.getElementById("root"))
