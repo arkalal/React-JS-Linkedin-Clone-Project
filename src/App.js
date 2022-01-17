@@ -7,6 +7,7 @@ import Login from './components/login/Login'
 import { useDispatch, useSelector } from 'react-redux'
 import { auth } from './fireBase/fireBase'
 import { login, logout } from './reduxStore/UserSlice'
+import Widgets from './components/mainBody/rightWidgets/Widgets'
 
 function App() {
 
@@ -17,8 +18,8 @@ function App() {
         auth.onAuthStateChanged((userAuth) => {
             if (userAuth) {
                 dispatch(login({
-                    email: userAuth.user.email,
-                    uid: userAuth.user.uid,
+                    email: userAuth.email,
+                    uid: userAuth.uid,
                     displayName: userAuth.displayName,
                     photoUrl: userAuth.photoURL
                 }))
@@ -36,6 +37,7 @@ function App() {
                 <div className="app-body">
                     <Sidebar></Sidebar>
                     <Feed></Feed>
+                    <Widgets></Widgets>
                 </div>
             )}
         </div>
