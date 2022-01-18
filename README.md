@@ -14,6 +14,6 @@ All this data will function from the Firebase Cloudstore Database and Redux Stor
 
 Please Open The Project Link on Google Chrome Browser to get the best experience. Thank You!!...
 
-So GOOD LUCK!! and Feel Free to test my Sample Project as you Wish..If You Like It and you can contact me..I would Love to contribute your Organization with my Skills.
+So GOOD LUCK!! and Feel Free to test my Sample Project as you Wish..If You Like It then you can contact me..I would Love to contribute your Organization with my Skills.
 
 THANK YOU!!
