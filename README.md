@@ -12,6 +12,8 @@
 
 All this data will function from the Firebase Cloudstore Database and Redux Store along with Firebase Authentication..
 
+Please Open The Project Link on Google Chrome Browser to get the best experience. Thank You!!...
+
 So GOOD LUCK!! and Feel Free to test my Sample Project as you Wish..If You Like It and you can contact me..I would Love to contribute your Organization with my Skills.
 
 THANK YOU!!
