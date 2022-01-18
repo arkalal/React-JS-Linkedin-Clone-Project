@@ -35,3 +35,16 @@
     color: #0177b7;
     margin-right: 5px;
 }
+
+.widget-articleRight{
+    flex: 1;
+}
+
+.widget-articleRight h4{
+    font-size: 14px;
+}
+
+.widget-articleRight p{
+    font-size: 12px;
+    color: gray;
+}
